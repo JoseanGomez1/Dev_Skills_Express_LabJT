@@ -5,7 +5,7 @@ const router = express.Router();
 const skillsCtrl = require('../controllers/skills');
 
 
-//Routing where we are going with the information
+
 
 router.get('/', skillsCtrl.index);
 router.get('/new', skillsCtrl.new);

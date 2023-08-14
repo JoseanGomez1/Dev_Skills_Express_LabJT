@@ -6,16 +6,22 @@ const skills = [
   ];
 
 module.exports = {
+    
     getAll, 
     getOne, 
     create, 
-    destroy: deleteOne,
+        destroy: deleteOne,
     update: updateOne
+
+
 };
 
 function getAll() {
     return skills;
-}
+
+
+
+    }
 
     function getOne(id) {
     id = Number(id)
@@ -45,12 +51,16 @@ function create(skill) {
 
 
 function updateOne(id, data) {
-    console.log(id, data)
+    
+    
+        console.log(id, data)
     let index = skills.findIndex(s=>s.id == id)
     const updateData = {...data }
-    let updatedSkill = {...skills[index], ...updateData}
+      
+        let updatedSkill = {...skills[index], ...updateData}
     skills.splice(index, 1, updatedSkill)
     updatedSkill.name = updatedSkill.skill
+    
     console.log("Skills index", updatedSkill)
     console.log(skills[1])
 
