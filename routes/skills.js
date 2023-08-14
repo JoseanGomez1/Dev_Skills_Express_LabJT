@@ -1,9 +1,23 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
+const skillsCtrl = require('../controllers/skills');
+
+
+//Routing where we are going with the information
+
+router.get('/', skillsCtrl.index);
+router.get('/new', skillsCtrl.new);
+router.get('/:id', skillsCtrl.getOne);
+
+router.get('/:id/edit', skillsCtrl.edit)
+router.post('/', skillsCtrl.create);
+
+router.delete('/:id', skillsCtrl.delete);
+router.put('/:id', skillsCtrl.update)
+
+
 
 module.exports = router;
+

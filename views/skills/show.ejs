@@ -1,0 +1,11 @@
+<%- include('../partials/header')%>
+
+    <h1>DEV Skills Show</h1>
+    <p>Skill: <%= skill.name %> </p>
+    <p>Proficiency: <%= skill.proficiency %> </p> <a href="/skills/<%=skill.id%>/edit">Edit</a></p>
+    
+    <div>
+        <a href="/skills">Back to Skills</a>
+    </div>
+
+<%- include('../partials/footer')%>
